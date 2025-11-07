@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  background: linear-gradient(130deg, #6f7c5a 0%, #b6c0a3 100%);
+}
+
+/* layout com sticky footer correto */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* cabeçalho simples */
+header {
+  text-align: center;
+  padding-top: 28px;
+  padding-bottom: 8px;
+}
+
+.logo { width: 200px; display:block; margin: 0 auto 6px; }
+.site-title { font-size: 26px; font-weight: 600; }
+
+/* main ocupa o espaço restante e centraliza o conteúdo */
+main {
+  flex: 1;                  /* empurra o footer para baixo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 28px 16px 20px;  /* evita que o conteúdo encoste no footer */
+}
+
+/* subtítulo */
+.subtitle {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 28px;
+  max-width: 640px;
+}
+
+/* container dos botões */
+.buttons-container {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;           /* permite quebra quando necessário */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 720px;
+}
+
+/* cada botão: responsivo, mantém proporção quadrada */
+.option-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 18px;
+  width: 220px;              /* largura base em desktop */
+  max-width: 50%;            /* não ultrapassa metade do container */
+  aspect-ratio: 1 / 1;       /* garante quadrado independentemente da largura */
+  transition: transform .22s ease, background .22s ease;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.06);
+}
+
+.option-card:hover { transform: translateY(-4px) scale(1.03); background: rgba(255,255,255,0.32); }
+
+.icon { width: 56px; height: auto; margin-bottom: 10px; opacity: 0.95; }
+
+.option-card span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* footer pequeno e sempre ao final (sem sobrepor conteúdo) */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px 12px;
+  font-size: 13px;
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+  opacity: 0.95;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(25px) brightness(0.9);
+    transform: scale(1.1);
+}
+
+/* ===== Responsividade ===== */
+/* telefones bem pequenos */
+@media (max-width: 480px) {
+  .subtitle { font-size: 16px; margin-bottom: 1

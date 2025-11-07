@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* ======== FUNDO DESFOCADO ======== */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(25px) brightness(0.9);
+    transform: scale(1.1);
+}
+
+/* ======== HEADER ======== */
+header {
+    text-align: center;
+    padding: 20px 0 10px;
+    z-index: 1;
+}
+
+header .logo {
+    width: 200px;
+    max-width: 60%;
+}
+
+/* ======== CONTAINER DO PLAYER ======== */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    border-radius: 25px;
+    padding: 30px 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 360px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.container:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ======== CAPA ======== */
+.player-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* ======== TÍTULOS ======== */
+h2 {
+    font-size: 1.6rem;
+    margin-top: 18px;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #444;
+    margin-top: 5px;
+}
+
+/* ======== BARRA DE PROGRESSO ======== */
+.player-progress {
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 25px auto 10px;
+    height: 6px;
+    width: 90%;
+    position: relative;
+}
+
+.progress {
+    background-color: #333;
+    height: 100%;
+    width: 0%;
+    border-radius: 5px;
+    transition: width 0.1s linear;
+}
+
+.music-duration {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #444;
+}
+
+/* ======== CONTROLES ======== */
+.player-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.fa-solid {
+    font-size: 1.8rem;
+    color: #444;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.play-button {
+    font-size: 2.5rem;
+}
+
+.fa-solid:hover {
+    color: #000;
+}
+
+/* ======== BOTÃO VOLTAR ======== */
+.back-btn {
+    margin-top: 25px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+/* ======== FOOTER FIXO ======== */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 13px;
+    background: rgba(255,255,255,0.10);
+    color: #fff;
+    opacity: 0.95;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+    header .logo {
+        width: 150px;
+    }
+
+    .container {
+        width: 85%;
+        padding: 25px 20px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    .fa-solid {
+        font-size: 1.6rem;
+    }
+
+    .play-button {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        width: 130px;
+    }
+
+    .container {
+        width: 90%;
+        padding: 20px 15px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 0.85rem;
+    }
+
+    .player-progress {
+        height: 5px;
+        width: 95%;
+    }
+
+    .fa-solid {
+        font-size: 1.4rem;
+    }
+
+    .play-button {
+        font-size: 2rem;
+    }
+
+    .back-btn {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
